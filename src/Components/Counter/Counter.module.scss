@@ -1,0 +1,10 @@
+$error-color: red;
+$success-color: green;
+
+.button {
+	background-color: $error-color;
+	cursor: pointer;
+	&:hover {
+		background-color: $success-color;
+	}
+}
