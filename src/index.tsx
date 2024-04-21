@@ -2,10 +2,10 @@ import "@/styles/normalize.scss";
 import { StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { App } from "@/Components/App/App";
-import { Main } from "@/Pages/Main";
-import { About } from "@/Pages/About";
-import { Shop } from "@/Pages/Shop";
+import { App } from "@/components/App/App";
+import { Main } from "@/pages/Main";
+import { About } from "@/pages/About";
+import { NotFound } from "@/pages/NotFound";
 
 const root = document.getElementById("root");
 
@@ -31,16 +31,16 @@ const router = createBrowserRouter([
 			{
 				path: "/about",
 				element: (
-					<Suspense fallback={<b>"Loading about..."</b>}>
+					<Suspense fallback={<b>"Loading..."</b>}>
 						<About />
 					</Suspense>
 				),
 			},
 			{
-				path: "/shop",
+				path: "*",
 				element: (
-					<Suspense fallback={<b>"Loading shop..."</b>}>
-						<Shop />
+					<Suspense fallback={<b>"Loading..."</b>}>
+						<NotFound />
 					</Suspense>
 				),
 			},
